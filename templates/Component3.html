@@ -7,10 +7,12 @@
         <h1>Welcome MediPuff User!</h1>
 
         
-        <p>
-            <h3>Text the phone number below to set up text notifications</h3>
-            <h4>(000-000-0000)</h4>
-        </p>
+        <fomr>
+            <h3>Typw your phone number below to set up text notifications</h3>
+            <input type="tel" name="phone_number" id="phone_number">
+            <input type="submit" value="Submit Phone Number" onclick="displayInput()">
+            <h4>(You only need to input your phone number once)</h4>
+        </form>
       
 
         <form method="POST" action="/EnterMedication">
