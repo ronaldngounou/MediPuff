@@ -25,9 +25,6 @@ def enter_medication():
     else:
         # Handle the GET request (or other methods) here
         return render_template('Component3.html')
-    
-    print(f"med: {med_name}")
-    print(f"time: {med_time}")
     return render_template('Component3.html')
 
 @app.route('/MainPage')
