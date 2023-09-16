@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MediPuff Main Page</title>
-    </head>
+<head>
+    <title>MediPuff Main Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #83d49e; /* Light Green background */
+        }
 
-    <body>
-        <input type="text" id="happy_points" name="happy_points" value="Happiness: " readonly>
+        input[type="text"],
+        input[type="submit"],
+        input[type="checkbox"],
+        label {
+            margin: 10px;
+        }
 
-        <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-        <input type="submit" value="Add a Medication">      </input>
-        <input type="submit" value="Remove a Medication"></input>
+        input[type="submit"] {
+            background-color: #2A6D94; 
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
 
-        <p>
+<body>
+    <input type="text" id="happy_points" name="happy_points" value="Happiness: " readonly>
+
+    <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    <input type="submit" value="Add a Medication">
+    <input type="submit" value="Remove a Medication">
+
+    <p>
         <input type="checkbox" id="med1" name="medications">
         <label for="med1"> Medication 1</label><br>
         <input type="checkbox" id="med2" name="medications">
@@ -22,9 +45,6 @@
         <label for="med4"> Medication 4</label><br>
         <input type="checkbox" id="med5" name="medications">
         <label for="med5"> Medication 5</label><br>
-        </p>
-
-    </body>
-
-
+    </p>
+</body>
 </html>

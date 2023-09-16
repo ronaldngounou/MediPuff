@@ -17,5 +17,9 @@ def enter_medication():
 def main_page():
     return render_template('Component5.html')
 
+@app.route('/Insert')
+def insert():
+    return render_template('Compnent.html')
+
 if __name__ == '__main__':
     app.run(debug = True)
