@@ -7,7 +7,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #83d49e; /* Light Green background */
+            background-color: #83d49e; 
         }
 
         input[type="text"],
@@ -40,10 +40,9 @@
         </script>
     
 
-        <input type="submit" value="Remove a Medication"></input>
+        <input type = "submit" value = "Remove a Medication" class = "remove-button-medication"> </input>
 
-
-    <form id="checkboxForm">
+    <p>
         <input type="checkbox" id="med1" name="medications">
         <label for="med1"> Medication 1</label><br>
         <input type="checkbox" id="med2" name="medications">
@@ -54,7 +53,7 @@
         <label for="med4"> Medication 4</label><br>
         <input type="checkbox" id="med5" name="medications">
         <label for="med5"> Medication 5</label><br>
-    </form>
+    </p>
 </body>
         </p>
 
@@ -67,19 +66,21 @@
             removeButtons.forEach( button => {
                 button.addEventListener("click", () => {
                     const checkboxes = document.querySelectorAll('input[type = "checkbox"]:checked');
-                    
+                        
                     checkboxes.forEach(checkbox => {
                         const label = checkbox.nextElementSibling;
                         label.remove();
                         checkbox.remove();
                     });
-                   
-    
+                    
+
                 });  
             });
-            
+                
         </script>
     </body>
+
+
 
 
 </html>
