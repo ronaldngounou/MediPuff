@@ -1,11 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MediPuff</title>
     
+    <title>MediPuff</title>
+    <style>
+      body {
+        background-color: #83d49e;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+      }
+      .circle {
+        width: 200px;
+        height: 12pc;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 5px;
+      }
+
+        .smiley {
+            font-size: 300px;
+            line-height: 0;
+            margin-bottom: 50px
+      }
+
+      .banner {
+        background-color: #2A6D94;
+        color: #D9D9D9;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+
+      }
+
+      .button {
+          border: none;
+          color: rgb(0, 0, 0);
+          padding: 20px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          cursor: pointer;
+          background-color: #2A6D94;
+          margin: 10px 0;
+          }
+
+      
+      
+    </style>
+
   </head>
 
   <body>
-    <p>first test</p>
+    <div class="circle">
+        <div class="smiley">
+          &#9786; 
+        </div>
+    </div>
+    <div class = "banner">
+      <h1> Welcome to MediPuff</h1>
+      <p>Make your Puff happy, by making your body happy!</p>
+    </div>
+    <a href = "EnterMedication" class = "button">Change Medication</a>
+    <a href = "MainPage" class = "button">Feed Puff!</a>
   </body>
 </html>
