@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MediPuff Welcome Page</title>
     <style>
         body {
@@ -13,7 +11,7 @@
         }
 
         h1 {
-            color: #007bff;
+            text-align: center;
         }
 
         h3 {
@@ -21,55 +19,70 @@
             margin-top: 20px;
         }
 
+        h4 {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
         input[type="text"],
-        input[type="time"] {
+        input[type="time"],
+        input[type="submit"] {
             padding: 10px;
             width: 50%;
-            margin-bottom: 10px;
-        }
-
-        label {
-            font-size: 16px;
-        }
-
-        input[type="checkbox"] {
-            margin-right: 5px;
+            margin-top: 10px;
+            border: none;
+            background-color: #fff; 
         }
 
         input[type="submit"] {
             background-color: #2A6D94; 
             color: #fff;
-            padding: 10px 20px;
-            border: none;
             cursor: pointer;
+            
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007bff; 
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <h1>Welcome MediPuff User!</h1>
-    <h3>Enter the name of your medication</h3>
-    <input type="text" id="submit_med" name="submit_med" placeholder="Type Medication Here">
 
-    <h3>Enter the time you take your medication</h3>
-    <input type="time" id="submit_time" name="submit_time" placeholder="Type Time Here">
+    <p>
+        <h3>Text the phone number below to set up text notifications</h3>
+        <h4>(000-000-0000)</h4>
+    </p>
 
-    <h3>Check the box next to the days you take your medication</h3>
-    <input type="checkbox" id="day1" name="day" value="Monday">
-    <label for="day1"> Monday</label><br><br>
-    <input type="checkbox" id="day2" name="day" value="Tuesday">
-    <label for="day2"> Tuesday</label><br><br>
-    <input type="checkbox" id="day3" name="day" value="Wednesday">
-    <label for="day3"> Wednesday</label><br><br>
-    <input type="checkbox" id="day4" name="day" value="Thursday">
-    <label for="day4"> Thursday</label><br><br>
-    <input type="checkbox" id="day5" name="day" value="Friday">
-    <label for="day5"> Friday</label><br><br>
-    <input type="checkbox" id="day6" name="day" value="Saturday">
-    <label for="day6"> Saturday</label><br><br>
-    <input type="checkbox" id="day7" name="day" value="Sunday">
-    <label for="day7"> Sunday</label><br><br>
+    <form method="POST" action="/EnterMedication">
+        <h3>Enter the name of your medication</h3>
+        <input type="text" id="submit_med" name="submit_med" placeholder="Type Medication Here">
+        <p></p>
 
-    <input type="submit" value="Submit Medication Information">
-    <input type="submit" value="Done Adding Medications">
+        <h3>Enter the time you take your medication</h3>
+        <input type="time" id="submit_time" name="submit_time" placeholder="Type Time Here">
+        <p></p>
+
+        <input type="submit" value="Submit Medication Information">
+    </form>
+
+    <div class="button-container">
+        <input type="submit" value="Done Adding Medications" onclick="goToMainPage()">
+    </div>
+
+    <script>
+        function goToMainPage() {
+            window.location.href = "/MainPage";
+        }
+    </script>
 </body>
 </html>
