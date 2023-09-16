@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>MediPuff Welcome Page</title>
-    </head>
-    <body>
-        <h1>Welcome MediPuff User!</h1>
+<head>
+    <title>MediPuff Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #83d49e; 
+        }
 
-        
-        <p>
-            <h3>Text the phone number below to set up text notifications</h3>
-            <h4>(000-000-0000)</h4>
-        </p>
-      
+        h1 {
+            text-align: center;
+        }
 
-        <form method="POST" action="/EnterMedication">
-            <h3>Enter the name of your medication</h3>
-            <input type="text" id="sumbit_med" name="submit_med" placeholder="Type Medication Here"></input>
-            <p><br><br></p>
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        h4 {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        input[type="text"],
+        input[type="time"],
+        input[type="submit"] {
+            padding: 10px;
+            width: 50%;
+            margin-top: 10px;
+            border: none;
+            background-color: #fff; 
+        }
+
+        input[type="submit"] {
+            background-color: #2A6D94; 
+            color: #fff;
+            cursor: pointer;
             
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007bff; 
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome MediPuff User!</h1>
+
+    <p>
+        <h3>Text the phone number below to set up text notifications</h3>
+        <h4>(000-000-0000)</h4>
+    </p>
+
+    <form method="POST" action="/EnterMedication">
+        <h3>Enter the name of your medication</h3>
+        <input type="text" id="submit_med" name="submit_med" placeholder="Type Medication Here">
+        <p></p>
 
         <h3>Enter the time you take your medication</h3>
         <input type="time" id="submit_time" name="submit_time" placeholder="Type Time Here">
