@@ -9,7 +9,9 @@
 
         <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
         <input type="submit" value="Add a Medication">      </input>
-        <input type="submit" value="Remove a Medication"></input>
+        <button class = "remove-button-medication">Remove a Medication</button>
+
+
 
         <p>
         <input type="checkbox" id="med1" name="medications">
@@ -24,6 +26,27 @@
         <label for="med5"> Medication 5</label><br>
         </p>
 
+
+
+
+        <script>
+            const removeButtons = document.querySelectorAll(".remove-button-medication")
+
+            removeButtons.forEach( button => {
+                button.addEventListener("click", () => {
+                    const checkboxes = document.querySelectorAll('input[type = "checkbox"]:checked');
+                    
+                    checkboxes.forEach(checkbox => {
+                        const label = checkbox.nextElementSibling;
+                        label.remove();
+                        checkbox.remove();
+                    });
+                   
+    
+                });  
+            });
+            
+        </script>
     </body>
 
 
