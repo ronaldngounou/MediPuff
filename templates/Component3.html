@@ -32,7 +32,13 @@
         <p><br><br></p>
 
         <input type="submit" value="Submit Medication Information">      </input>
-        <input type="submit" value="Done Adding Medications"></input>
+        <input type="submit" value="Done Adding Medications" onclick="goToMainPage()"></input>
+
+        <script>
+            function goToMainPage() {
+                window.location.href = "/MainPage";
+            }
+        </script>
     </body>
 
 

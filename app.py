@@ -1,5 +1,8 @@
 from flask import Flask, render_template
 
+happiness = 25
+max_happiness = 50
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -15,7 +18,7 @@ def enter_medication():
 @app.route('/MainPage')
 
 def main_page():
-    return render_template('Component5.html')
+    return render_template('Component5.html', happiness_points = happiness)
 
 if __name__ == '__main__':
     app.run(debug = True)

@@ -5,10 +5,18 @@
     </head>
 
     <body>
-        <input type="text" id="happy_points" name="happy_points" value="Happiness: " readonly>
+        <p>Happiness: {{happiness_points}}</p>
 
         <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-        <input type="submit" value="Add a Medication">      </input>
+        <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">      </input>
+
+        <script>
+            function goToEnterMedPage() {
+                window.location.href = "/EnterMedication";
+            }
+        </script>
+    
+
         <input type="submit" value="Remove a Medication"></input>
 
         <p>
