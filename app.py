@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from pyngrok import ngrok
 
 happiness = 25
 max_happiness = 50
