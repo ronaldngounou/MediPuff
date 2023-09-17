@@ -7,74 +7,130 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #83d49e; 
+            background-color: #83d49e;
         }
 
         input[type="text"],
         input[type="submit"],
-        input[type="checkbox"],
-        label {
-            margin: 10px;
+        input[type="checkbox"] {
+            padding: 10px;
+            width: 50%;
+            margin-top: 10px;
+            border: none;
+            background-color: #fff;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007bff;
         }
 
         input[type="submit"] {
-            background-color: #2A6D94; 
+            background-color: #2A6D94;
             color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
+            transition: background-color 0.3s; 
+        }
+
+        .happiness-bar {
+            background-color: #2A6D94;
+            height: 20px;
+            width: 0;
+            margin-top: 10px;
+            transition: width 0.5s;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .smiley {
+            font-size: 100px;
+            margin-top: 10px;
+            margin-left:150px;
+            animation: bounce 0.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: scale(1);
+            }
+            100% {
+                transform: scale(1.1);
+            }
         }
     </style>
 </head>
+<body>
+    <p>Happiness: <span id="happiness_points">0</span></p>
 
-    <body>
-        <p>Happiness: {{happiness_points}}</p>
+    <div class="happiness-bar" id="happiness_bar"></div>
 
-        <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-        <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">      </input>
+    <p class="smiley" id="smiley">😢</p>
 
-        <script>
-            function goToEnterMedPage() {
-                window.location.href = "/EnterMedication";
+    <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">
+    <input type="submit" value="Remove a Medication" class="remove-button-medication">
+
+    <p>
+        <input type="checkbox" id="med1" name="medications" onchange="updateHappiness(this)">
+        <label for="med1"> Medication 1</label><br><br>
+        <input type="checkbox" id="med2" name="medications" onchange="updateHappiness(this)">
+        <label for="med2"> Medication 2</label><br><br>
+        <input type="checkbox" id="med3" name="medications" onchange="updateHappiness(this)">
+        <label for="med3"> Medication 3</label><br><br>
+        <input type="checkbox" id="med4" name="medications" onchange="updateHappiness(this)">
+        <label for="med4"> Medication 4</label><br><br>
+        <input type="checkbox" id="med5" name="medications" onchange="updateHappiness(this)">
+        <label for="med5"> Medication 5</label><br><br>
+    </p>
+    <script>
+        const happinessBar = document.getElementById("happiness_bar");
+        const happinessPoints = document.getElementById("happiness_points");
+        const smiley = document.getElementById("smiley");
+        let happiness = 0;
+
+        function updateHappiness(checkbox) {
+            if (checkbox.checked) {
+                happiness += 10; // Increase happiness when a checkbox is checked
+            } else {
+                happiness -= 10; // Decrease happiness when a checkbox is unchecked
             }
-        </script>
-    
 
-        <input type = "submit" value = "Remove a Medication" class = "remove-button-medication"> </input>
+            if (happiness < 0) {
+                happiness = 0; // Ensure happiness doesn't go below 0
+            }
 
-        <p>
-            <input type="checkbox" id="med1" name="medications">
-            <label for="med1"> Medication 1</label><br>
-            <input type="checkbox" id="med2" name="medications">
-            <label for="med2"> Medication 2</label><br>
-            <input type="checkbox" id="med3" name="medications">
-            <label for="med3"> Medication 3</label><br>
-            <input type="checkbox" id="med4" name="medications">
-            <label for="med4"> Medication 4</label><br>
-            <input type="checkbox" id="med5" name="medications">
-            <label for="med5"> Medication 5</label><br>
-        </p>
-        <script>
-            const removeButtons = document.querySelectorAll(".remove-button-medication")
+            // Update the happiness bar, count, and smiley face
+            updateHappinessUI();
+        }
 
-            removeButtons.forEach( button => {
-                button.addEventListener("click", () => {
-                    const checkboxes = document.querySelectorAll('input[type = "checkbox"]:checked');
-                        
-                    checkboxes.forEach(checkbox => {
-                        const label = checkbox.nextElementSibling;
-                        label.remove();
-                        checkbox.remove();
-                    });
-                    
+        function updateHappinessUI() {
+            happinessPoints.textContent = happiness;
+            happinessBar.style.width = happiness + "%";
 
-                });  
-            });
-                
-        </script>
-    </body>
+            // Update the smiley face based on happiness level
+            if (happiness >= 50) {
+                smiley.textContent = "😄"; 
+            } else if (happiness >= 40) {
+                smiley.textContent = "😊"
+            }else if (happiness >= 30) {
+                smiley.textContent = "☺️"
+            }else if (happiness >= 20){
+                smiley.textContent = "🙂"
+            }else if (happiness >= 10) {
+                smiley.textContent = "😐"; 
+            } else {
+                smiley.textContent = "😢"; 
+            }
+        }
 
-
-
-
+        function goToEnterMedPage() {
+            window.location.href = "/EnterMedication";
+        }
+    </script>
+</body>
 </html>
+
+
+
