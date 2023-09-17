@@ -1,0 +1,20 @@
+## Inspiration
+The inspiration behind the creation of our medication reminder app, coupled with the unique feature of nurturing a virtual pet, comes from a desire to foster a sense of responsibility and companionship in individuals dealing with chronic conditions. We recognize and even empathize, with the prevalent struggle of remembering to take medication as prescribed and know the consequences of missed doses on health outcomes. To tackle this challenge, we drew inspiration from the human-animal bond, known for its therapeutic benefits, and transformed it into a digital format. By gamifying the medication-taking process through virtual pet care, we aim to motivate users to stay on track with their treatment regimens.
+
+## What it does
+The website, called MediPuff, serves as a valuable resource for individuals who struggle with remembering to take their medication regularly. Recognizing the busy lives many Americans lead and the tendency to rely on memory or traditional methods like written schedules, MediPuff simplifies the process. Users input their medication details and frequency just once. However, what sets MediPuff apart is its delightful and unique motivator, Puff, a virtual pet whose happiness directly correlates with the user's medication adherence. At the start of each day, Puff's happiness begins at 50%, and as users either miss or successfully take their medication, Puff's happiness levels fluctuate, offering an engaging and visually rewarding way to encourage and track medication compliance.
+
+## How we built it
+The website was constructed through a combination of Python and JavaScript for the backend, which handles the core functionality and data processing. For the front end, we employed HTML and CSS to create the user interface and ensure an appealing and responsive design. To visualize our initial concept and design layout, we utilized Figma to create a mockup.
+
+## Challenges we ran into
+We had trouble implementing the text messages into our code.
+
+## Accomplishments that we're proud of
+We made the HTML framework quickly, despite the lack of HTML experience we had. Our website is easy to navigate and works!
+
+## What we learned
+We learned how to use Flask, and were able to deepen our understanding of Python, Javascript, HTML, and CSS. We grasped our understanding of version control to work together as a team. We deployed the application on Heroku.
+
+## What's next for MediPuff
+Next, we want to find a way to actually implement the notifications, and also find different ways to reward users for keeping up with their medications.
