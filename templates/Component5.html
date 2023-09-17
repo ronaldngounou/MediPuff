@@ -81,13 +81,11 @@
     <p class="smiley" id="smiley">😢</p>
 
     <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">
-    <input type="submit" value="Remove a Medication" class="remove-button-medication" onclick="removeSelectedMedications()">
-
+    <button type = "submit" class = "remove-button-medication" onclick = "removeSelectedMedications()"> Remove a Medication </button>
     <form action="/MainPage" method= "POST">
         {% for item in items %}
-            <label>
-                <input type="checkbox" name="selected_items" value="{{ item }}" onchange="updateHappiness(this)"> {{ item }}
-            </label><br>
+            <input type = "checkbox" id = "med1" name = "medications" onchange = "updateHappiness(this)" >
+            <label for = "med">{{item}}</label><br>
         {% endfor %}
     </form>
 
@@ -148,20 +146,30 @@
         function goToEnterMedPage() {
             window.location.href = "/EnterMedication";
         }
+        
+        function removeSelectedMedications(){
+            const removeButtons = document.querySelectorAll(".remove-button-medication")
 
-        function removeSelectedMedications() {
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    const label = checkbox.nextElementSibling;
-                    label.remove();
-                    checkbox.remove();
-                }
+            removeButtons.forEach( button => {
+                button.addEventListener("click", () => {
+                    const checkboxes = document.querySelectorAll('input[type = "checkbox"]:checked');
+
+                    checkboxes.forEach(checkbox => {
+                        const label = checkbox.nextElementSibling;
+                        label.remove();
+                        checkbox.remove();
+                    });
+
+
+                });  
             });
 
-            // After removing medications, reset happiness
-            happiness = 0;
+            hapiness = 0;
             updateHappinessUI();
         }
+
+        
+        
     </script>
 </body>
 </html>
