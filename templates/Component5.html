@@ -11,15 +11,7 @@
             background-color: #83d49e;
         }
 
-        input[type="text"],
-        input[type="submit"],
-        input[type="checkbox"] {
-            padding: 10px;
-            width: 50%;
-            margin-top: 10px;
-            border: none;
-            background-color: #fff;
-        }
+        
         .remove-button-medication{
             padding: 10px;
             width: 50%;
@@ -93,10 +85,14 @@
 
     <p class="smiley" id="smiley">😢</p>
 
-    <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">
+    <div>
+        <input type="submit" class = "remove-button-medication" value="Add a Medication" onclick="goToEnterMedPage()">  
+    </div>
     
-
-    <button type = "submit" class = "remove-button-medication" onclick = "removeSelectedMedications()"> Remove a Medication </button>
+    <div>
+        <button type = "submit" class = "remove-button-medication" onclick = "removeSelectedMedications()"> Remove a Medication </button>
+    </div>
+    
     <form action="/MainPage" method= "POST">
         {% for item in items %}
             <input type = "checkbox" id = "med1" name = "medications" onchange = "updateHappiness(this)" >
