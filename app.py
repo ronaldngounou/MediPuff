@@ -6,7 +6,7 @@ from twilio.twiml.voice_response import VoiceResponse
 
 med_names = []
 med_times = []
-#phone_number = 0000000000
+phone_number = 0000000000
 
 #stuff to send text messages
 # Your Account SID from twilio.com/console
