@@ -4,17 +4,15 @@ from twilio.rest import Client
 from twilio.twiml.messaging_response import MessagingResponse
 from twilio.twiml.voice_response import VoiceResponse
 
-happiness = 25
-max_happiness = 50
 med_names = []
 med_times = []
-phone_number = 0000000000
+#phone_number = 0000000000
 
 #stuff to send text messages
 # Your Account SID from twilio.com/console
 account_sid = "AC1301b04dcb50efa82ad50164c3c4eb9e"
 # Your Auth Token from twilio.com/console
-auth_token  = "998b3ec8a9b64fbaedeca6f4aaeef2b4"
+auth_token  = "4fc352e00cd88bd406f3a0c88eae887f"
 client = Client(account_sid, auth_token)
 
 
@@ -36,23 +34,26 @@ def enter_medication():
         med_names.append(med_name)
         med_times.append(med_time)
         
-        message = client.messages.create(
-            to="{}{}".format("+", phone_number), 
-            from_="+18445610671",
-            body="You have set up your text notifications!")
+        #message = client.messages.create(
+         #   to="{}{}".format("+", phone_number), 
+          #  from_="+18445610671",
+           # body="You have set up your text notifications!")
         
        
-        print(message.sid)
+        #print(message.sid)
         return render_template('Component3.html')
     else:
         # Handle the GET request (or other methods) here
         return render_template('Component3.html')
     return render_template('Component3.html')
 
-@app.route('/MainPage')
+@app.route('/MainPage', methods=["POST", "GET"])
 
 def main_page():
-    return render_template('Component5.html', happiness_points = happiness)
+    if request.method == 'POST':
+        return render_template('Component5.html', items = med_names)
+    else:
+        return render_template('Component5.html', items = med_names)
 
 @app.route('/Insert')
 def insert():

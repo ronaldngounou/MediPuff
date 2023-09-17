@@ -28,7 +28,6 @@
 </head>
 
     <body>
-        <p>Happiness: {{happiness_points}}</p>
 
         <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
         <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">      </input>
@@ -39,27 +38,14 @@
             }
         </script>
     
-
-        <input type = "submit" value = "Remove a Medication" class = "remove-button-medication"> </input>
-
-    <p>
-        <input type="checkbox" id="med1" name="medications">
-        <label for="med1"> Medication 1</label><br>
-        <input type="checkbox" id="med2" name="medications">
-        <label for="med2"> Medication 2</label><br>
-        <input type="checkbox" id="med3" name="medications">
-        <label for="med3"> Medication 3</label><br>
-        <input type="checkbox" id="med4" name="medications">
-        <label for="med4"> Medication 4</label><br>
-        <input type="checkbox" id="med5" name="medications">
-        <label for="med5"> Medication 5</label><br>
-    </p>
-</body>
-        </p>
-
-
-
-
+        <input type = "submit" value = "Remove a Medication" class = "remove-button-medication"> </input><br>
+        <form action="/MainPage" method= "POST">
+            {% for item in items %}
+                <label>
+                    <input type="checkbox" name="selected_items" value="{{ item }}"> {{ item }}
+                </label><br>
+            {% endfor %}
+        </form>
         <script>
             const removeButtons = document.querySelectorAll(".remove-button-medication")
 
@@ -78,6 +64,7 @@
             });
                 
         </script>
+        
     </body>
 
 
