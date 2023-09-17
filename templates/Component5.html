@@ -10,52 +10,27 @@
             background-color: #83d49e;
             background-color: #83d49e;
         }
-
-        input[type="text"],
-        input[type="submit"],
-        input[type="checkbox"] {
-            padding: 10px;
-            width: 50%;
-            margin-top: 10px;
-            border: none;
-            background-color: #fff;
-        }
-        .remove-button-medication{
-            padding: 10px;
-            width: 50%;
-            margin-top: 10px;
-            border: none;
-            background-color: #fff;
-        }
-        .remove-button-medication:hover{
-            background-color: #007bff;
-        }
         
-        input[type="submit"]:hover {
-            background-color: #007bff;
-        }
-        input[type="submit"] {
-            background-color: #2A6D94;
-            color: #fff;
-            padding: 10px 20px;
+        .remove-button-medication{
+            width: 50%;
+            margin-top: 10px;
             border: none;
+            
+            background-color: #2A6D94;
+            padding: 10px 20px;
             cursor: pointer;
             transition: background-color 0.3s;
+        }
+
+        .remove-button-medication:hover{
+            background-color: #007bff;
         }
 
         .remove-button-medication {
             background-color: #2A6D94;
             color: #fff;
             padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s;
         }
-        
-        .remove-button-medication:hover {
-            background-color: #007bff;
-        }
-
 
         .happiness-bar {
             background-color: #2A6D94;
@@ -93,10 +68,14 @@
 
     <p class="smiley" id="smiley">😢</p>
 
-    <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">
+    <div>
+        <input type="submit" class = "remove-button-medication" value="Add a Medication" onclick="goToEnterMedPage()">  
+    </div>
     
-
-    <button type = "submit" class = "remove-button-medication" onclick = "removeSelectedMedications()"> Remove a Medication </button>
+    <div>
+        <button type = "submit" class = "remove-button-medication" onclick = "removeSelectedMedications()"> Remove a Medication </button>
+    </div>
+    
     <form action="/MainPage" method= "POST">
         {% for item in items %}
             <input type = "checkbox" id = "med" name = "medications" onchange = "updateHappiness(this)" >
