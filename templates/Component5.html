@@ -89,18 +89,6 @@
         {% endfor %}
     </form>
 
-    <p>
-        <input type="checkbox" id="med1" name="medications" onchange="updateHappiness(this)">
-        <label for="med1"> Medication 1</label><br>
-        <input type="checkbox" id="med2" name="medications" onchange="updateHappiness(this)">
-        <label for="med2"> Medication 2</label><br>
-        <input type="checkbox" id="med3" name="medications" onchange="updateHappiness(this)">
-        <label for="med3"> Medication 3</label><br>
-        <input type="checkbox" id="med4" name="medications" onchange="updateHappiness(this)">
-        <label for="med4"> Medication 4</label><br>
-        <input type="checkbox" id="med5" name="medications" onchange="updateHappiness(this)">
-        <label for="med5"> Medication 5</label><br>
-    </p>
     <script>
         const happinessBar = document.getElementById("happiness_bar");
         const happinessPoints = document.getElementById("happiness_points");
