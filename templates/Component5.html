@@ -99,7 +99,7 @@
     <button type = "submit" class = "remove-button-medication" onclick = "removeSelectedMedications()"> Remove a Medication </button>
     <form action="/MainPage" method= "POST">
         {% for item in items %}
-            <input type = "checkbox" id = "med1" name = "medications" onchange = "updateHappiness(this)" >
+            <input type = "checkbox" id = "med" name = "medications" onchange = "updateHappiness(this)" >
             <label for = "med">{{item}}</label><br>
         {% endfor %}
     </form>
@@ -159,6 +159,7 @@
 
                     checkboxes.forEach(checkbox => {
                         const label = checkbox.nextElementSibling;
+
                         label.remove();
                         checkbox.remove();
                     });
@@ -170,7 +171,7 @@
             hapiness = 0;
             updateHappinessUI();
         }
-
+        
         
     </script>
 </body>

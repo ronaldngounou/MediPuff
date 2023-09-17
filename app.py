@@ -29,7 +29,7 @@ def enter_medication():
     if request.method == 'POST':
         med_name = request.form.get("submit_med")
         med_time = request.form.get("submit_time")
-        phone_number = request.form.get("phone_number")
+        
         
         med_names.append(med_name)
         med_times.append(med_time)
