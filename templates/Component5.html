@@ -67,7 +67,7 @@
 
     <div class="happiness-bar" id="happiness_bar"></div>
 
-    <p class="smiley" id="smiley">😢</p>
+    <p class="smiley" id="smiley">😄</p>
 
     <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">
     <input type="submit" value="Remove a Medication" class="remove-button-medication" onclick="removeSelectedMedications()">
@@ -119,30 +119,4 @@
                 smiley.textContent = "☺️"
             } else if (happiness >= 20) {
                 smiley.textContent = "🙂"
-            } else if (happiness >= 10) {
-                smiley.textContent = "😐";
-            } else {
-                smiley.textContent = "😢";
-            }
-        }
-
-        function goToEnterMedPage() {
-            window.location.href = "/EnterMedication";
-        }
-
-        function removeSelectedMedications() {
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    const label = checkbox.nextElementSibling;
-                    label.remove();
-                    checkbox.remove();
-                }
-            });
-
-            // After removing medications, reset happiness
-            happiness = 0;
-            updateHappinessUI();
-        }
-    </script>
-</body>
-</html>
+            } else if
