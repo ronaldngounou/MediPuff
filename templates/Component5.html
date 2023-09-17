@@ -72,6 +72,14 @@
     <input type="submit" value="Add a Medication" onclick="goToEnterMedPage()">
     <input type="submit" value="Remove a Medication" class="remove-button-medication">
 
+    <form action="/MainPage" method= "POST">
+        {% for item in items %}
+            <label>
+                <input type="checkbox" name="selected_items" value="{{ item }}" onchange="updateHappiness(this)"> {{ item }}
+            </label><br>
+        {% endfor %}
+    </form>
+
     <p>
         <input type="checkbox" id="med1" name="medications" onchange="updateHappiness(this)">
         <label for="med1"> Medication 1</label><br><br>
